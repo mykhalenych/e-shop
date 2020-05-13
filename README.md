@@ -1,4 +1,4 @@
-<h1><a href="https://mykhalenych.github.io/airport-scoreboard/e-shop">E-shop</a></h1>
+<h1><a href="https://mykhalenych.github.io/e-shop">E-shop</a></h1>
 QUICK START
 
 In the project directory, you can run:

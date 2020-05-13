@@ -45,7 +45,7 @@ export const CardItem = ({
         >
           <Card.Title className="text-white">{card.name}</Card.Title>
           <div className="d-flex justify-content-between button_block">
-            {pinned  === "pinned" (
+            {pinned  === "pinned" ? (
               <Button className="btn btn-info" onClick={unpinnedBtn}>
                 Add to pinned
               </Button>

@@ -1,6 +1,11 @@
 import React from "react";
-import { Button, Container, Jumbotron, Table } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import {
+  orderListSelector,
+  pinnedListSelector,
+} from "../../Redux/products.selectors";
+import { connect } from "react-redux";
 
 const Buscet = ({ order, pinned }) => {
   if (pinned.length > 1) {
@@ -12,20 +17,30 @@ const Buscet = ({ order, pinned }) => {
   } else {
     let pinnedItem = pinned.map((item) => {
       return (
-        <ul key={item.pinnedList.id}>
-          <li>{item.pinnedList.name}</li>
-          <li>{item.pinnedList.desription}</li>
-          <li>{item.pinnedList.price}</li>
-        </ul>
+        <Card style={{ width: "10rem", height: "1rem" }}>
+          <Card.Body>
+            <Card.Title>id: {item.pinnedList.id}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">
+              Title: {item.pinnedList.name}
+            </Card.Subtitle>
+            <Card.Text>Desription: {item.pinnedList.desription}</Card.Text>
+            <Card.Text>Price: {item.pinnedList.price}</Card.Text>
+          </Card.Body>
+        </Card>
       );
     });
     let orders = order.map((item) => {
       return (
-        <ul key={item.orderList.id}>
-          <li>{item.orderList.name}</li>
-          <li>{item.orderList.desription}</li>
-          <li>{item.orderList.price}</li>
-        </ul>
+        <Card style={{ width: "10rem" }}>
+          <Card.Body>
+            <Card.Title>id: {item.orderList.id}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">
+              Title: {item.orderList.name}
+            </Card.Subtitle>
+            <Card.Text>Desription: {item.orderList.desription}</Card.Text>
+            <Card.Text>Price: {item.orderList.price}</Card.Text>
+          </Card.Body>
+        </Card>
       );
     });
 
@@ -43,4 +58,10 @@ const Buscet = ({ order, pinned }) => {
     );
   }
 };
-export default Buscet;
+const mapState = (state) => {
+  return {
+    order: orderListSelector(state),
+    pinned: pinnedListSelector(state),
+  };
+};
+export default connect(mapState)(Buscet);

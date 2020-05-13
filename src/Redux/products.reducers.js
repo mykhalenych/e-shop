@@ -4,7 +4,6 @@ import {
   REMOVE_FROM_BUSCET,
   ADD_TO_PINNED,
   REMOVE_FROM_PINNED,
-  SEARCH_ITEM,
 } from "./products.actions";
 import getOrderData from "../Helpers/getOrderData";
 
@@ -12,7 +11,7 @@ const initialState = {
   productsList: [],
   orderList: [],
   pinnedList: [],
-  searchQuery: [],
+  searchQuery: '',
 };
 
 export const productsReducer = (state = initialState, action) => {
@@ -60,14 +59,4 @@ export const pinnedReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export const filterReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SEARCH_ITEM:
-      return {
-        ...state,
-        searchQuery: action.payload.searchQuery,
-      };
-    default:
-      return state;
-  }
-};
+

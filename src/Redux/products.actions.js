@@ -53,15 +53,6 @@ export const removeFromPinned = (pinnedList) => {
   };
   return action;
 };
-// export const searchItem = (searchQuery) => {
-//   const action = {
-//     type: SEARCH_ITEM,
-//     payload: {
-//       searchQuery,
-//     },
-//   };
-//   return action;
-// };
 
 export const searchItem = (searchQuery) => {
   const action = {

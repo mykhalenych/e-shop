@@ -4,8 +4,8 @@ import {
   productsReducer,
   pinnedReducer,
   orderReducer,
-  filterReducer,
 } from "./Redux/products.reducers";
+import { filterReducer } from "./Redux/search.reducer";
 const reducer = combineReducers({
   products: productsReducer,
   order: orderReducer,

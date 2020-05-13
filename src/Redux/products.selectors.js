@@ -11,9 +11,7 @@ export const searchProduct = createSelector(
     let resultData = searchQuery;
     if (products) {
       resultData = products.filter((item) => {
-        if (item.name === searchQuery) {
-          return item.name;
-        }
+        return item.name.toLowerCase() === searchQuery.toLowerCase();
       });
     }
     return resultData;

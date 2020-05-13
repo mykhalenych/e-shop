@@ -14,7 +14,7 @@ export const CardItem = ({
   const [isFlipped, changeFlipped] = useState(false);
   const [btn, changeBtn] = useState("add");
   const [pinned, changePinnedBtn] = useState("pinned");
-  const [status, changeStatus] = useState("enable")
+
   const unpinnedBtn = () => {
     changePinnedBtn("unpinned");
     onAddToPinned(card);
@@ -35,9 +35,6 @@ export const CardItem = ({
   const onClickFlip = () => {
     changeFlipped(!isFlipped);
   };
-  let btnDisable = "false"
-  
-
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
       <Card bg="secondary" className="mb-4 ">
@@ -48,15 +45,12 @@ export const CardItem = ({
         >
           <Card.Title className="text-white">{card.name}</Card.Title>
           <div className="d-flex justify-content-between button_block">
-            {pinned === "pinned" ? (
-              <Button className="btn btn-info" 
-              onClick={unpinnedBtn}>
+            {pinned  === "pinned" (
+              <Button className="btn btn-info" onClick={unpinnedBtn}>
                 Add to pinned
               </Button>
             ) : (
-              <Button className="btn btn-info"
-
-               onClick={pinnedBtn}>
+              <Button className="btn btn-info" onClick={pinnedBtn}>
                 Delete from pinned
               </Button>
             )}
@@ -83,9 +77,8 @@ export const CardItem = ({
         </Card.Header>
         <ListGroup>
           <ListGroup.Item variant="light">
-            Description: <strong>{card.description}</strong>
+            Description: <strong>{card.desription}</strong>
           </ListGroup.Item>
-
         </ListGroup>
       </Card>
     </ReactCardFlip>

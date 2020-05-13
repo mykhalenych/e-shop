@@ -1,4 +1,4 @@
-<h1><a href="">E-shop</a></h1>
+<h1><a href="https://mykhalenych.github.io/airport-scoreboard/e-shop">E-shop</a></h1>
 QUICK START
 
 In the project directory, you can run:
@@ -17,7 +17,6 @@ The page will reload if you make edits.
 <li>HTML5</li>
 <li>Bootstrap</li>
 <li>CSS3</li>
-<li>Flexbox</li>
 <li>Sass (Scss)</li>
 <li>JS ES6</li>
 <li>ReactJS</li>

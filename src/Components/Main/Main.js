@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row, Form } from "react-bootstrap";
 import CardItem from "./Blocks/Card";
 import {
@@ -20,21 +20,18 @@ const Main = ({
   removeFromPinned,
   searchItem,
   searchQuery,
-  data,
+  searchValue,
   order,
 }) => {
   useEffect(() => {
     getProductsList();
   }, []);
 
-  const [value, setValue] = useState("");
   const handleChange = (event) => {
-    setValue(event.target.value);
     searchItem(event.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    searchItem(value);
   };
 
   const renderCards = (item) => (
@@ -66,8 +63,8 @@ const Main = ({
         </Form>
       </Col>
       <Row xs={1} sm={2} md={2} lg={3}>
-        {data.length >= 1
-          ? data.map((el) => renderCards(el))
+        {searchValue.length >= 1
+          ? searchValue.map((el) => renderCards(el))
           : products.map((el) => renderCards(el))}
       </Row>
     </Container>
@@ -88,7 +85,7 @@ const mapState = (state) => {
     order: orderListSelector(state),
     pinned: pinnedListSelector(state),
     searchQuery: getSearchQuery(state),
-    data: searchProduct(state),
+    searchValue: searchProduct(state),
   };
 };
 export default connect(mapState, mapDispatch)(Main);

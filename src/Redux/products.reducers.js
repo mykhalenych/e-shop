@@ -11,7 +11,6 @@ const initialState = {
   productsList: [],
   orderList: [],
   pinnedList: [],
-  searchQuery: '',
 };
 
 export const productsReducer = (state = initialState, action) => {

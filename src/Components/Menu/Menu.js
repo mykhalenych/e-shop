@@ -9,10 +9,10 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink to="/" exact className="btn btn-link text-white">
+            <NavLink to="/e-shop" exact className="btn btn-link text-white">
               Catalog
             </NavLink>
-            <NavLink to="/buscet" className="btn btn-link text-white">
+            <NavLink to="e-shop/buscet" className="btn btn-link text-white">
               Buscet
             </NavLink>
           </Nav>

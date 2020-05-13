@@ -11,10 +11,10 @@ const App = () => {
       <Container fluid className="px-0 bg-light">
         <Menu />
         <Switch>
-          <Route path="/" exact>
+          <Route path="/e-shop/" exact>
             <Main />
           </Route>
-          <Route path="/buscet">
+          <Route path="/e-shop/buscet">
             <Buscet />
           </Route>
         </Switch>
